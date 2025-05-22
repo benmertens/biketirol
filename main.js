@@ -70,23 +70,24 @@ for (let etappe of ETAPPEN) {
 }
 
 // auf Wechsel in Pulldown reagieren
-pulldown.onchange = function(evt) {
+pulldown.onchange = function (evt) {
     //console.log(evt.target.value);
     window.location.href = `https://${evt.target.value}.github.io/biketirol`;
 }
 
- const controlElevation = L.control.elevation({
+const controlElevation = L.control.elevation({
     theme: "bike-tirol",
     time: false,
     elevationDiv: "#profile",
     height: 300,
- }).addTo(map);
- controlElevation.load("data/etappe25.gpx");
+}).addTo(map);
+controlElevation.load("data/etappe25.gpx");
 
+// Minimap:
 var gkTirol = new L.TileLayer("https://wmts.kartetirol.at/gdi_summer/{z}/{x}/{y}.png");
 var miniMap = new L.Control.MiniMap(gkTirol, {
     toggleDisplay: true,
 }).addTo(map);
 
-// or, add to an existing map:
+// Fullscreen:
 map.addControl(new L.Control.Fullscreen());
