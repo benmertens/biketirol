@@ -82,3 +82,9 @@ pulldown.onchange = function(evt) {
     height: 300,
  }).addTo(map);
  controlElevation.load("data/etappe25.gpx");
+
+
+var gkTirol = new L.TileLayer("https://wmts.kartetirol.at/gdi_summer/{z}/{x}/{y}.png");
+var miniMap = new L.Control.MiniMap(gkTirol, {
+    toggleDisplay: true,
+}).addTo(map);
