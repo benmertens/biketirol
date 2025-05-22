@@ -69,7 +69,6 @@ for (let etappe of ETAPPEN) {
 
 }
 
-
 // auf Wechsel in Pulldown reagieren
 pulldown.onchange = function(evt) {
     //console.log(evt.target.value);
